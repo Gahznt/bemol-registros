@@ -72,6 +72,8 @@ let app = new Vue({
                         document.querySelector('#button4').removeAttribute("disabled");
                         document.querySelector('#input4').removeAttribute("disabled");
                         this.blockOthers("4");
+
+                        this.getApiMessages(data.id);
                     }else{
                         alert('User not found');
                     }
@@ -96,6 +98,8 @@ let app = new Vue({
                         document.querySelector('#button2').removeAttribute("disabled");
                         document.querySelector('#input2').removeAttribute("disabled");
                         this.blockOthers("2");
+
+                        this.getApiMessages(data.id);
                     }else{
                         alert('User not found');
                     }
@@ -120,6 +124,8 @@ let app = new Vue({
                         document.querySelector('#button3').removeAttribute("disabled");
                         document.querySelector('#input3').removeAttribute("disabled");
                         this.blockOthers("3");
+
+                        this.getApiMessages(data.id);
                     }else{
                         alert('User not found');
                     }
