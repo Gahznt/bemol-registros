@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  www:
+      build: .
+      restart: always
+      ports:
+          - '80:80'
+      volumes:
+        - ./:/var/www/html
+      networks:
+        - default
+      container_name: bemol-app
+  db:
+    image: mysql:8.0
+    restart: always
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_DATABASE: bemol
+      MYSQL_USER: bemol_db_user
+      MYSQL_PASSWORD: bemol_db_pass
+      MYSQL_ROOT_PASSWORD: bemol_db_pass
+    volumes: 
+      - db_data:/var/lib/mysql
+    networks:
+      - default
+volumes:
+  db_data:
