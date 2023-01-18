@@ -16,7 +16,7 @@
 
 - Após clonar a aplicação no diretório desejado, antes de tudo, deve-se configuar o arquivo .env, basta copiar o arquivo `.env.example` e renomear para `.env`
 - Os dados para conexão com o banco estão no arquivo `docker-compose.yml`.
-## NOTA DE ATENÇÃO:## 
+## NOTA DE ATENÇÃO:
 Como o banco está conteinerizado pelo docker, no .env na váriavel `DB_HOST` preencha o valor com `db`, assim ele irá reconhecer o host como o container do mysql.
 
 - Agora com o .env configurado, basta rodar os comandos em sequencia:
