@@ -17,9 +17,10 @@ O projeto foi desenvolvido localmente e todo conteinerizado, então, caso for te
 ## Rodar a aplicação
 
 - Após clonar a aplicação no diretório desejado, antes de tudo, deve-se configuar o arquivo .env, basta copiar o arquivo `.env.example` e renomear para `.env`
-- Os dados para conexão com o banco estão no arquivo `docker-compose.yml`.
+- Os dados para conexão com o banco estão no arquivo `docker-compose.yml` e devem ser repassados no arquivo .env.
+- Então abra o `.env` e em `DB_PORT` coloque `3306`, em `DB_DATABASE` coloque `bemol`, em DB_USERNAME coloque `bemol_db_user` e em `DB_PASSWORD` coloque `bemol_db_pass`;
 ## NOTA DE ATENÇÃO:
-Como o banco está conteinerizado pelo docker, no .env na váriavel `DB_HOST` preencha o valor com `db`, assim ele irá reconhecer o host como o container do mysql.
+Como o banco está conteinerizado pelo docker, no .env na váriavel `DB_HOST` coloque `db`, assim ele irá reconhecer o host como o container do mysql.
 
 - Agora com o .env configurado, basta rodar os comandos em sequencia:
 
