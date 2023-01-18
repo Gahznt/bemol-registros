@@ -9,10 +9,21 @@
 
 ## Requisitos
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Docker com docker-compose instalados.
+- A aplicação irá utilizar as portas 80 e 3360, então essas portas devem estar desocupadas.
+
+## Rodar a aplicação
+
+- Após clonar a aplicação no diretório desejado, antes de tudo, deve-se configuar o arquivo .env, basta copiar o arquivo `.env.example` e renomear para `.env`
+- Os dados para conexão com o banco estão no arquivo `docker-compose.yml`.
+-- NOTA DE ATENÇÃO: Como o banco está conteinerizado pelo docker, no .env na váriavel `DB_HOST` preencha o valor com `db`, assim ele irá reconhecer o host como o container do mysql.
+- Agora com o .env configurado, basta rodar os comandos em sequencia:
+
+- `docker-compose up -d`
+- `docker exec bemol-app composer install`
+- `docker exec bemol-app php artisan key:generate`
+- `docker exec bemol-app php artisan migrate`
+- `docker exec bemol-app chmod -R ugo+rw storage`
+
+- Com isso a aplicação já deverá estar funcionando, basta acessar `127.0.0.1` ou `localhost` no navegador
+
