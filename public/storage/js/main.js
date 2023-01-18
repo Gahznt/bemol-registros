@@ -170,12 +170,14 @@ let app = new Vue({
               })
                 .then(response => response.json(), this.loaded = true)
                 .then(data => {
-                    if(data){
+                    if(data != 'error'){
                         this.cityModel = data.localidade;
                         this.stateModel = data.uf;
+                        document.querySelector('#cityInput').removeAttribute("disabled")
+                        document.querySelector('#stateInput').removeAttribute("disabled")
+                    }else{
+                        alert("Digite um cep válido");
                     }
-                    document.querySelector('#cityInput').removeAttribute("disabled")
-                    document.querySelector('#stateInput').removeAttribute("disabled")
 
                 });
             

@@ -22,7 +22,7 @@ class UserController extends Controller
             $jsonToArray = json_decode($json);
             return $jsonToArray;
         } catch (\Throwable $th) {
-            return null;
+            return response()->json("error");
         }
 
     }
