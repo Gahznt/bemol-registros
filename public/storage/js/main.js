@@ -168,18 +168,21 @@ let app = new Vue({
             fetch(`api/cep/${cep}`, {
                 method: "get",
               })
-                .then(response => response.json(), this.loaded = true)
+                .then(response => response.json())
                 .then(data => {
-                    if(data != 'error'){
-                        console.log(data);
+                    console.log(data);
+                    if(data != "erro"){
                         this.cityModel = data.localidade;
                         this.stateModel = data.uf;
                         document.querySelector('#cityInput').removeAttribute("disabled")
                         document.querySelector('#stateInput').removeAttribute("disabled")
                     }else{
                         alert("Digite um cep válido");
+                        this.cityModel = '',
+                        this.stateModel = ''
+                        document.querySelector('#cityInput').setAttribute("disabled", true)
+                        document.querySelector('#stateInput').setAttribute("disabled", true)
                     }
-
                 });
             
         }
