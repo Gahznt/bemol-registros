@@ -171,6 +171,7 @@ let app = new Vue({
                 .then(response => response.json(), this.loaded = true)
                 .then(data => {
                     if(data != 'error'){
+
                         this.cityModel = data.localidade;
                         this.stateModel = data.uf;
                         document.querySelector('#cityInput').removeAttribute("disabled")

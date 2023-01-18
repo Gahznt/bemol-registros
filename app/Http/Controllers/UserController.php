@@ -20,6 +20,9 @@ class UserController extends Controller
         try {
             $json = file_get_contents('https://viacep.com.br/ws/'. $cep . '/json/');
             $jsonToArray = json_decode($json);
+            if(isset($jsonToArray) && $jsonToArray['erro']){
+                return response()->json("error");
+            }
             return $jsonToArray;
         } catch (\Throwable $th) {
             return response()->json("error");
