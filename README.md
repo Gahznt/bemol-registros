@@ -7,6 +7,8 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+### Considerações iniciais
+O projeto foi desenvolvido localmente e todo conteinerizado, então, caso for testar no Windows, recomendo fortemente que seja testado usando WSL para emular o Linux, pois rodar o docker no windows gera lentidão no sistema, fato que se dá por conta do docker ter que rodar o kernel do linux por "de baixo dos panos". Então recomendo fortemente que caso for testar no Windows, utilize o WSL (nada impede de testar sem o WSL, porém ficará mais lento por conta dessa estrutura do windows->docker.)
 ## Requisitos
 
 - Docker com docker-compose instalados.
